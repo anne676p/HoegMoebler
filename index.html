@@ -66,20 +66,19 @@
 
   <section class="container">
     <div class="top">
-      <nav>
-        <button class="filter hover" data-kategori="stol_1"> CH23 </button>
-        <button class="filter hover" data-kategori="stol_2"> CH24 </button>
-        <button class="filter hover" data-kategori="stol_3"> CH25 </button>
-        <button class="filter hover" data-kategori="stol_4"> CH26 </button>
-      </nav>
+      <div>
+        <div class="btn" id="stol_1"> CH23 </div>
+        <div class="btn" id="stol_2"> CH24 </div>
+        <div class="btn" id="stol_3"> CH25 </div>
+        <div class="btn" id="stol_4"> CH26 </div>
+      </div>
     </div>
-    <section class="data-container"></section>
-    <template>
-      <article class="menu">
-        <h2></h2>
-        <img class="zoom" src="" alt="">
-      </article>
-    </template>
+    <section class="container">
+      <div>
+        <h2 id="title"> CH24 // Skalstol</h2>
+        <img id="myImage" src="img/billede1.png">
+      </div>
+    </section>
   </section>
 
   <section class="container color">
@@ -137,7 +136,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
-    const endpoint = "https://spreadsheets.google.com/feeds/list/1UVS0arclAXeclvQI0TbSmenBvNqGuXx0I2zhgL8Fges/od6/public/values?alt=json";
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+      document.getElementById("stol_1").addEventListener("click", displayStol1);
+      document.getElementById("stol_2").addEventListener("click", displayStol2);
+      document.getElementById("stol_3").addEventListener("click", displayStol3);
+      document.getElementById("stol_4").addEventListener("click", displayStol4);
+
+    }
+
+    function displayStol1() {
+      document.getElementById("myImage").src = "img/billede2.png";
+      document.getElementById("title").innerHTML = "DET VIRKER";
+    }
+
+    function displayStol2() {
+      document.getElementById("myImage").src = "img/billede1.png";
+      document.getElementById("title").innerHTML = "DET VIRKER 2";
+    }
+
+    function displayStol3() {
+      document.getElementById("myImage").src = "img/billede1.png";
+      document.getElementById("title").innerHTML = "DET VIRKER 3";
+    }
+
+    function displayStol4() {
+      document.getElementById("myImage").src = "img/billede2.png";
+      document.getElementById("title").innerHTML = "DET VIRKER 4";
+    }
 
   </script>
 </body>
