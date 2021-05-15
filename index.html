@@ -64,22 +64,38 @@
     </div>
   </section>
 
-  <section class="container">
-    <div class="top">
+  <section class="container pt-4">
+    <div class="row text-center">
       <div>
-        <div class="btn" id="stol_1"> CH23 </div>
-        <div class="btn" id="stol_2"> CH24 </div>
-        <div class="btn" id="stol_3"> CH25 </div>
-        <div class="btn" id="stol_4"> CH26 </div>
+        <div class="btn col-4 m-2" id="stol_1">CH24</div>
+        <div class="btn col-4 m-2" id="stol_2">CH25</div>
+        <div class="btn col-4 m-2" id="stol_3">CH20</div>
+        <div class="btn col-4 m-2" id="stol_4">CH07</div>
       </div>
     </div>
-    <section class="container">
-      <div>
-        <h2 id="title"> CH24 // Skalstol</h2>
-        <img id="myImage" src="img/billede1.png">
-      </div>
-    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" id="content1" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" id="content2" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" id="content3" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+    </svg>
+    <div class="col text-center">
+      <h2 id="title" class="pt-5"> CH24 // Y-STOLEN</h2>
+      <p id="designer">Designet af Hans Wegner i 1950</p>
+      <img id="myImage" class="blur" src="img/stol1.png">
+    </div>
+
+    <div class="col txtcontent text-center p-3">
+      <p id="contentbox"> En to tre fire</p>
+    </div>
   </section>
+
 
   <section class="container color">
     <div class="top" id="splash_2">
@@ -147,23 +163,28 @@
     }
 
     function displayStol1() {
-      document.getElementById("myImage").src = "img/billede2.png";
-      document.getElementById("title").innerHTML = "DET VIRKER";
+      document.getElementById("myImage").src = "img/stol1.png";
+      document.getElementById("title").innerHTML = "CH24 // Y-STOLEN";
+      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1950";
+
     }
 
     function displayStol2() {
-      document.getElementById("myImage").src = "img/billede1.png";
-      document.getElementById("title").innerHTML = "DET VIRKER 2";
+      document.getElementById("myImage").src = "img/stol2.png";
+      document.getElementById("title").innerHTML = "CH25 // LOUNGESTOL";
+      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1949";
     }
 
     function displayStol3() {
-      document.getElementById("myImage").src = "img/billede1.png";
-      document.getElementById("title").innerHTML = "DET VIRKER 3";
+      document.getElementById("myImage").src = "img/stol3.png";
+      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1956";
+      document.getElementById("title").innerHTML = "CH20 // ELBOW CHAIR";
     }
 
     function displayStol4() {
-      document.getElementById("myImage").src = "img/billede2.png";
-      document.getElementById("title").innerHTML = "DET VIRKER 4";
+      document.getElementById("myImage").src = "img/stol4.png";
+      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1963";
+      document.getElementById("title").innerHTML = "CH07 // SKALSTOLEN";
     }
 
   </script>
