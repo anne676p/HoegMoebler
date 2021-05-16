@@ -85,10 +85,10 @@
       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
       <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
     </svg>
-    <div class="col text-center">
-      <h2 id="title" class="pt-5"> CH24 // Y-STOLEN</h2>
-      <p id="designer">Designet af Hans Wegner i 1950</p>
-      <img id="myImage" class="blur" src="img/stol1.png">
+    <div class="text-center d-md-flex">
+      <h2 id="title" class="pt-5 text-sm-start"> CH24 // Y-STOLEN</h2>
+      <p id="designer" class="text-sm-start">Designet af Hans Wegner i 1950</p>
+      <img id="myImage" class="" src="img/stol1.png">
     </div>
 
     <div class="col txtcontent text-center p-3">
@@ -153,6 +153,7 @@
     -->
   <script>
     document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", displayStol1);
 
     function start() {
       document.getElementById("stol_1").addEventListener("click", displayStol1);
@@ -166,6 +167,9 @@
       document.getElementById("myImage").src = "img/stol1.png";
       document.getElementById("title").innerHTML = "CH24 // Y-STOLEN";
       document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1950";
+      document.getElementById("content1").addEventListener("click", contentone1);
+      document.getElementById("content2").addEventListener("click", contentone2);
+      document.getElementById("content3").addEventListener("click", contentone3);
 
     }
 
@@ -185,6 +189,18 @@
       document.getElementById("myImage").src = "img/stol4.png";
       document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1963";
       document.getElementById("title").innerHTML = "CH07 // SKALSTOLEN";
+    }
+
+    function contentone1() {
+      document.getElementById("contentbox").innerHTML = "test test test";
+    }
+
+    function contentone2() {
+      document.getElementById("contentbox").innerHTML = "test test test test";
+    }
+
+    function contentone3() {
+      document.getElementById("contentbox").innerHTML = "test test test test test";
     }
 
   </script>

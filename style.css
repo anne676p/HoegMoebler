@@ -130,6 +130,29 @@ img {
   img {
     width: 40%;
   }
+
+  #content1 {
+    position: relative;
+    top: 8vw;
+    left: 57vw;
+  }
+
+  #content2 {
+    position: relative;
+    top: 45vw;
+    left: 55vw;
+  }
+
+  #content3 {
+    position: relative;
+    top: 16vw;
+    left: 24vw;
+  }
+
+  .circle {
+    height: 45px;
+    width: 45px;
+  }
 }
 
 
