@@ -15,6 +15,8 @@ h1 {
 
 h2 {
   font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 h3 {
@@ -85,6 +87,17 @@ img {
   left: 3vw;
 }
 
+.citat {
+  font-size: 30rem;
+  position: relative;
+  font-style: italic;
+  top: 23vw;
+  left: -15vw;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
 /* SEKTION 1 */
 
 #section_1 {
@@ -102,14 +115,21 @@ img {
 }
 
 .image_placeholder {
-  height: 400px;
-  width: 100%;
+  height: 300px;
   background-color: grey;
 }
 
 .product {
   height: 100px;
   width: 100px;
+}
+
+.felement {
+  background-image: url(img/5thelement-01.png);
+  background-repeat: no-repeat;
+  height: 15vw;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -153,11 +173,27 @@ img {
     height: 45px;
     width: 45px;
   }
+
+  .citat {
+    top: 8vw;
+    left: -5vw;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+  }
 }
 
 
 
 /* SEKTION 2 */
+#section_4 {
+  background-image: url(img/PLACEHOLDER.png);
+  background-repeat: no-repeat;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
 /* SEKTION 3 */
 /* SEKTION 4 */
 /* SEKTION 5 */
