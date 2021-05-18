@@ -212,6 +212,7 @@
     <article class="kampagneprodukt">
       <h2 class="title"></h2>
       <p class="designer"></p>
+      <img class="billede">
     </article>
   </template>
 
@@ -233,10 +234,10 @@
     const listeElm = document.querySelector("#liste");
     const skabelon = document.querySelector("template").content;
 
-    const url = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
+    const kampagn = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
 
     async function start() {
-      const resspons = await fetch(url);
+      const resspons = await fetch(kampagn);
       const json = await resspons.json();
       vis(json);
     }
@@ -246,6 +247,8 @@
       kampagneprodukter.forEach(kampagneprodukt => {
         const klon = skabelon.cloneNode(true);
         klon.querySelector(".title").innerHTML = kampagneprodukt.produktnavn;
+        klon.querySelector(".designer").innerHTML = kampagneprodukt.designer;
+        klon.querySelector(".billede").src = kampagneprodukt.billede.guid;
         listeElm.appendChild(klon);
       })
 
