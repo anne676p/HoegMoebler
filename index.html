@@ -208,7 +208,7 @@
 
   <section id="liste"></section>
 
-  <template>
+  <template id="template_one">
     <article class="kampagneprodukt">
       <h2 class="title"></h2>
       <p class="designer"></p>
@@ -217,6 +217,11 @@
   </template>
 
   <section id="test"></section>
+  <template id="template_two">
+    <article class="sektion">
+      <h2 class="overskrift"></h2>
+    </article>
+  </template>
 
 
   <!-- Optional JavaScript; choose one of the two! -->
@@ -231,23 +236,24 @@
     -->
   <script>
     document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", startSektion);
 
     const listeElm = document.querySelector("#liste");
-    const skabelon = document.querySelector("template").content;
+    const testtt = document.querySelector("#test");
+    const skabelon = document.querySelector("#template_one").content;
+    const skabelonTwo = document.querySelector("#template_two").content;
 
-    const kampagn = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
-    const testsss = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/posts/18";
+
+    const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
+
 
     async function start() {
-      const resspons = await fetch(kampagn);
-      const json = await resspons.json();
-      vis(json);
+      let wpEnd = `kampagneprodukt`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
 
-    }
-
-    function vis(kampagneprodukter) {
-      console.log(kampagneprodukter);
-      kampagneprodukter.forEach(kampagneprodukt => {
+      console.log(json);
+      json.forEach(kampagneprodukt => {
         const klon = skabelon.cloneNode(true);
         klon.querySelector(".title").innerHTML = kampagneprodukt.produktnavn;
         klon.querySelector(".designer").innerHTML = kampagneprodukt.designer;
@@ -255,7 +261,20 @@
         listeElm.appendChild(klon);
 
       })
+    }
 
+    async function startSektion() {
+      let wpEnd = `sektion`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
+
+      console.log(json);
+      json.forEach(sektion => {
+        const klon = skabelonTwo.cloneNode(true);
+        klon.querySelector(".overskrift").innerHTML = sektion.overskrift;
+        testtt.appendChild(klon);
+
+      })
     }
 
   </script>
