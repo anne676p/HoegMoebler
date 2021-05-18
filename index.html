@@ -216,6 +216,7 @@
     </article>
   </template>
 
+  <section id="test"></section>
 
 
   <!-- Optional JavaScript; choose one of the two! -->
@@ -235,11 +236,13 @@
     const skabelon = document.querySelector("template").content;
 
     const kampagn = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
+    const testsss = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/posts/18";
 
     async function start() {
       const resspons = await fetch(kampagn);
       const json = await resspons.json();
       vis(json);
+
     }
 
     function vis(kampagneprodukter) {
@@ -250,6 +253,7 @@
         klon.querySelector(".designer").innerHTML = kampagneprodukt.designer;
         klon.querySelector(".billede").src = kampagneprodukt.billede.guid;
         listeElm.appendChild(klon);
+
       })
 
     }
