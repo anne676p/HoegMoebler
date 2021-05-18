@@ -194,6 +194,14 @@ img {
   background-position: center;
 }
 
+#section_5 {
+  background-image: url(img/PLACEHOLDER.png);
+  background-repeat: no-repeat;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
 /* SEKTION 3 */
 /* SEKTION 4 */
 /* SEKTION 5 */

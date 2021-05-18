@@ -165,23 +165,55 @@
     </div>
   </section>
 
-  <section class="container color">
-    <div class="top" id="splash_three">
-      <h2></h2>
+  <section class="container-fluid color mt-4 d-flex align-items-center justify-content-center" id="section_5">
+    <div>
+      <h4 class="citat">"</h4>
     </div>
-    <div class="bottom">
-      <h2></h2>
-      <div class="txt"></div>
-      <div class="txt"></div>
+    <div class="top col-8" style="font-style: italic">
+      <h4 class=""> Citat fra Høgh Møbler</h4>
+    </div>
+
+  </section>
+  <section class="container-fluid color pt-5">
+    <div class="bottom d-sm-flex justify-content-center">
+
+      <div class="txt p-sm-5 col-sm-5">
+        <h2>Mød manden bag Høgh Møbler</h2>
+        <p>Among Danish furniture designers, Hans J. Wegner (1914-2007) is considered one of the most creative, innovative and prolific. Often referred to as the master of the chair, Wegner created almost 500 in his lifetime – many of them considered masterpieces. His iconic Wishbone Chair is probably the most well-known and has been in continuous production since 1950.<br><br>
+
+
+          Wegner was part of the spectacular generation that created what is today referred to as ‘the Golden Age’ of modern Danish design. “Many foreigners have asked me how we created the Danish style,” Wegner once said. “And I’ve answered that it was a continuous process of purification and of simplification – to cut down to the simplest possible design of four legs, a seat, and a combined back- and armrest.” <br> <br>
+
+          The son of a cobbler, Wegner was born in 1914 in Tønder, a town in southern Denmark. He began his apprenticeship with Danish master cabinetmaker H. F. Stahlberg when he was just 14 years old. Later on, he moved to Copenhagen and attended the School of Arts and Crafts from 1936 to 1938 before setting out as a furniture designer.<br> <br>
+
+          In 1938, Wegner was approached by architects and designers Arne Jacobsen and Erik Møller, and started designing furniture for the new Aarhus City Hall. During the same period, Wegner began collaborating with master cabinetmaker Johannes Hansen, who was a driving force in bringing new furniture design to the Danish public at the Copenhagen Cabinetmakers’ Guild Exhibitions.
+
+          The core of Wegner’s legacy is his focus on showing the inner soul of furniture pieces through a simple and functional exterior. </p>
+      </div>
+      <div class="text p-sm-5 col-sm-5">
+        <div class="m-5"></div>
+        <p>Among Danish furniture designers, Hans J. Wegner (1914-2007) is considered one of the most creative, innovative and prolific. Often referred to as the master of the chair, Wegner created almost 500 in his lifetime – many of them considered masterpieces. His iconic Wishbone Chair is probably the most well-known and has been in continuous production since 1950.<br> <br>
+
+
+          Wegner was part of the spectacular generation that created what is today referred to as ‘the Golden Age’ of modern Danish design. “Many foreigners have asked me how we created the Danish style,” Wegner once said. “And I’ve answered that it was a continuous process of purification and of simplification – to cut down to the simplest possible design of four legs, a seat, and a combined back- and armrest.” <br> <br>
+
+          The son of a cobbler, Wegner was born in 1914 in Tønder, a town in southern Denmark. He began his apprenticeship with Danish master cabinetmaker H. F. Stahlberg when he was just 14 years old. Later on, he moved to Copenhagen and attended the School of Arts and Crafts from 1936 to 1938 before setting out as a furniture designer.
+
+          In 1938, Wegner was approached by architects and designers Arne Jacobsen and Erik Møller, and started designing furniture for the new Aarhus City Hall. During the same period, Wegner began collaborating with master cabinetmaker Johannes Hansen, who was a driving force in bringing new furniture design to the Danish public at the Copenhagen Cabinetmakers’ Guild Exhibitions.
+
+          The core of Wegner’s legacy is his focus on showing the inner soul of furniture pieces through a simple and functional exterior. </p>
+      </div>
     </div>
   </section>
 
-  <section class="container">
-    <div class="felement">
-      <h2></h2>
-      <form></form>
-    </div>
-  </section>
+  <section id="liste"></section>
+
+  <template>
+    <article class="kampagneprodukt">
+      <h2 class="title"></h2>
+      <p class="designer"></p>
+    </article>
+  </template>
 
 
 
@@ -197,54 +229,26 @@
     -->
   <script>
     document.addEventListener("DOMContentLoaded", start);
-    document.addEventListener("DOMContentLoaded", displayStol1);
 
-    function start() {
-      document.getElementById("stol_1").addEventListener("click", displayStol1);
-      document.getElementById("stol_2").addEventListener("click", displayStol2);
-      document.getElementById("stol_3").addEventListener("click", displayStol3);
-      document.getElementById("stol_4").addEventListener("click", displayStol4);
+    const listeElm = document.querySelector("#liste");
+    const skabelon = document.querySelector("template").content;
 
+    const url = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
+
+    async function start() {
+      const resspons = await fetch(url);
+      const json = await resspons.json();
+      vis(json);
     }
 
-    function displayStol1() {
-      document.getElementById("myImage").src = "img/stol1.png";
-      document.getElementById("title").innerHTML = "CH24 // Y-STOLEN";
-      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1950";
-      document.getElementById("content1").addEventListener("click", contentone1);
-      document.getElementById("content2").addEventListener("click", contentone2);
-      document.getElementById("content3").addEventListener("click", contentone3);
+    function vis(kampagneprodukter) {
+      console.log(kampagneprodukter);
+      kampagneprodukter.forEach(kampagneprodukt => {
+        const klon = skabelon.cloneNode(true);
+        klon.querySelector(".title").innerHTML = kampagneprodukt.produktnavn;
+        listeElm.appendChild(klon);
+      })
 
-    }
-
-    function displayStol2() {
-      document.getElementById("myImage").src = "img/stol2.png";
-      document.getElementById("title").innerHTML = "CH25 // LOUNGESTOL";
-      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1949";
-    }
-
-    function displayStol3() {
-      document.getElementById("myImage").src = "img/stol3.png";
-      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1956";
-      document.getElementById("title").innerHTML = "CH20 // ELBOW CHAIR";
-    }
-
-    function displayStol4() {
-      document.getElementById("myImage").src = "img/stol4.png";
-      document.getElementById("designer").innerHTML = "Designer af Hans Wegner i 1963";
-      document.getElementById("title").innerHTML = "CH07 // SKALSTOLEN";
-    }
-
-    function contentone1() {
-      document.getElementById("contentbox").innerHTML = "test test test";
-    }
-
-    function contentone2() {
-      document.getElementById("contentbox").innerHTML = "test test test test";
-    }
-
-    function contentone3() {
-      document.getElementById("contentbox").innerHTML = "test test test test test";
     }
 
   </script>
