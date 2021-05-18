@@ -53,6 +53,16 @@
     </div>
   </template>
 
+  <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-center"></section>
+  <template id="template_five">
+    <div>
+      <h4 class="citatfirst">"</h4>
+    </div>
+    <div>
+      <h4 class="citat col-lg-8"></h4>
+      <p class="navn"></p>
+    </div>
+  </template>
 
 
   <!-- Optional JavaScript; choose one of the two! -->
@@ -69,6 +79,7 @@
     document.addEventListener("DOMContentLoaded", startSektionOne);
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
+    document.addEventListener("DOMContentLoaded", startSektionFive);
 
     const sectionOne = document.querySelector("#section_1");
     const skabelonOne = document.querySelector("#template_one").content;
@@ -78,6 +89,10 @@
 
     const sectionThree = document.querySelector("#section_3");
     const skabelonThree = document.querySelector("#template_three").content;
+
+    const sectionFive = document.querySelector("#section_5");
+    const skabelonFive = document.querySelector("#template_five").content;
+
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
@@ -117,9 +132,26 @@
       console.log(json);
       json.forEach(produktvisning => {
         const klon = skabelonThree.cloneNode(true);
-        klon.querySelector(".overskrift").innerHTML = produktvisning.produktnavn;
         klon.querySelector(".billede").src = produktvisning.produktvideo.guid;
+        klon.querySelector(".overskrift").innerHTML = produktvisning.produktnavn;
+        klon.querySelector(".pris").innerHTML = produktvisning.pris + " DKK";
+
+
         sectionThree.appendChild(klon);
+      })
+    }
+
+    async function startSektionFive() {
+      let wpEnd = `citat`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
+
+      console.log(json);
+      json.forEach(citat => {
+        const klon = skabelonFive.cloneNode(true);
+        klon.querySelector(".citat").innerHTML = citat.citat;
+        klon.querySelector(".navn").innerHTML = citat.navn;
+        sectionFive.appendChild(klon);
       })
     }
 

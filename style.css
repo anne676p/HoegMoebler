@@ -4,12 +4,18 @@ body {
 }
 
 .container_row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: center;
 }
 
 
 .item {
   height: 100px;
+}
+
+.citat {
+  font-style: italic;
 }
 
 .color {
@@ -96,7 +102,7 @@ img {
   left: 3vw;
 }
 
-.citat {
+.citatfirst {
   font-size: 30rem;
   position: relative;
   font-style: italic;
@@ -183,7 +189,7 @@ img {
     width: 45px;
   }
 
-  .citat {
+  .citatfirst {
     top: 8vw;
     left: -5vw;
     margin: 0;
@@ -191,17 +197,13 @@ img {
     line-height: 0;
   }
 
-  .container_row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-  }
+
 }
 
 
 
 /* SEKTION 2 */
-#section_4 {
+.section_5_splash {
   background-image: url(img/PLACEHOLDER.png);
   background-repeat: no-repeat;
   height: 300px;
