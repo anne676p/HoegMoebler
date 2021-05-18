@@ -20,14 +20,37 @@
 
 <body>
 
-  <section id="liste"></section>
+  <section id="section_1"></section>
+  <template class="container-fluid splash_one" id="template_one">
+    <div class="d-flex flex-column align-items-end pt-4 pe-2 ">
+      <div>
+        <div class="logo"></div>
+      </div>
+      <div>
+        <h3 class="rotate campaign_name"></h3>
+      </div>
+    </div>
+  </template>
 
-  <template>
-    <article class="kampagneprodukt">
-      <h2 class="title"></h2>
-      <p class="designer"></p>
-      <img class="billede">
-    </article>
+  <section id="section_2" class="color"></section>
+  <template class="container-fluid" id="template_two">
+    <div class="container d-flex flex-column align-items-center p-5">
+      <h1 class="overskrift"></h1>
+      <div class="text-wrap">
+        <p class="text-break indhold"></p>
+      </div>
+    </div>
+  </template>
+
+  <section class="container_row p-5" id="section_3"></section>
+  <template id="template_three">
+    <div>
+      <div id="product_1">
+        <img class="billede">
+        <h3 class="overskrift"></h3>
+        <p class="pris"></p>
+      </div>
+    </div>
   </template>
 
 
@@ -43,29 +66,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
-    document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", startSektionOne);
+    document.addEventListener("DOMContentLoaded", startSektionTwo);
+    document.addEventListener("DOMContentLoaded", startSektionThree);
 
-    const listeElm = document.querySelector("#liste");
-    const skabelon = document.querySelector("template").content;
+    const sectionOne = document.querySelector("#section_1");
+    const skabelonOne = document.querySelector("#template_one").content;
 
-    const kampagn = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/kampagneprodukt";
+    const sectionTwo = document.querySelector("#section_2");
+    const skabelonTwo = document.querySelector("#template_two").content;
 
-    async function start() {
-      const resspons = await fetch(kampagn, post);
-      const json = await resspons.json();
-      vis(json);
+    const sectionThree = document.querySelector("#section_3");
+    const skabelonThree = document.querySelector("#template_three").content;
+
+    const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
+
+
+    async function startSektionOne() {
+      let wpEnd = `campagnetitel`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
+
+      console.log(json);
+      json.forEach(campagnetitel => {
+        const klon = skabelonOne.cloneNode(true);
+        klon.querySelector(".campaign_name").innerHTML = campagnetitel.overskrift;
+        sectionOne.appendChild(klon);
+      })
     }
 
-    function vis(kampagneprodukter) {
-      console.log(kampagneprodukter);
-      kampagneprodukter.forEach(kampagneprodukt => {
-        const klon = skabelon.cloneNode(true);
-        klon.querySelector(".title").innerHTML = kampagneprodukt.produktnavn;
-        klon.querySelector(".designer").innerHTML = kampagneprodukt.designer;
-        klon.querySelector(".billede").src = kampagneprodukt.billede.guid;
-        listeElm.appendChild(klon);
-      })
+    async function startSektionTwo() {
+      let wpEnd = `tekst`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
 
+      console.log(json);
+      json.forEach(tekst => {
+        const klon = skabelonTwo.cloneNode(true);
+        klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
+        klon.querySelector(".indhold").innerHTML = tekst.kolonne_1;
+        sectionTwo.appendChild(klon);
+      })
+    }
+
+    async function startSektionThree() {
+      let wpEnd = `produktvisning`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
+
+      console.log(json);
+      json.forEach(produktvisning => {
+        const klon = skabelonThree.cloneNode(true);
+        klon.querySelector(".overskrift").innerHTML = produktvisning.produktnavn;
+        klon.querySelector(".billede").src = produktvisning.produktvideo.guid;
+        sectionThree.appendChild(klon);
+      })
     }
 
   </script>
