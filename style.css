@@ -40,7 +40,7 @@ h3 {
 }
 
 img {
-  width: 70%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -148,6 +148,10 @@ img {
   background-position: center;
 }
 
+.fifth_element {
+  width: 100%;
+}
+
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (min-width: 992px) {
@@ -161,10 +165,6 @@ img {
   .text-wrap {
     width: 45rem;
     text-align: center;
-  }
-
-  img {
-    width: 40%;
   }
 
   #content1 {

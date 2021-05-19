@@ -64,14 +64,50 @@
     </div>
   </template>
 
-  <section id="section_6" class="color p-4"></section>
-  <template class="container-fluid" id="template_six">
-    <div class="p-lg-5">
+  <section id="section_6" class="p-4 container-fluid color"></section>
+  <template id="template_six">
+    <div class="p-lg-5 container">
       <h1 class="overskrift"></h1>
       <p class="indhold column-count"></p>
     </div>
   </template>
 
+  <section id="section_7"> </section>
+  <template id="template_seven">
+    <img class="fifth_element">
+  </template>
+
+  <section id="section_8" class="container"> </section>
+  <template id="template_eight">
+    <div class="container">
+      <div class="top">
+        <h2 style="color: #431E1E;" class="konkurrence_titel"></h2>
+        <ul class="d-flex flex-wrap" style="color: #431E1E;">
+          <li class="col-6 col-lg-3 text-lg-center punkt_1"></li>
+          <li class="col-6 col-lg-3 text-lg-center punkt_2"></li>
+          <li class="col-6 col-lg-2 text-lg-center punkt_3"></li>
+          <li class="col-6 col-lg-2 text-lg-center punkt_4"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row pt-5 text-center">
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_1">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_2">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_3">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_4">
+      </div>
+
+
+
+    </div>
+  </template>
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -84,7 +120,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
-    document.addEventListener("DOMContentLoaded", startSektionOne);
+    document.addEventListener("DOMContentLoaded", startAssets);
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
     document.addEventListener("DOMContentLoaded", startSektionFive);
@@ -105,21 +141,43 @@
     const sectionSix = document.querySelector("#section_6");
     const skabelonSix = document.querySelector("#template_six").content;
 
+    const sectionSeven = document.querySelector("#section_7");
+    const skabelonSeven = document.querySelector("#template_seven").content;
+
+    const sectionEight = document.querySelector("#section_8");
+    const skabelonEight = document.querySelector("#template_eight").content;
+
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
 
-    async function startSektionOne() {
+    async function startAssets() {
       let wpEnd = `indhold/66`;
       const respons = await fetch(wp + wpEnd);
       indhold = await respons.json();
-      visOne();
+      visAssets();
     }
 
-    function visOne() {
+    function visAssets() {
       const klon = skabelonOne.cloneNode(true);
       klon.querySelector(".campaign_name").innerHTML = indhold.titel;
       sectionOne.appendChild(klon);
+
+      const element = skabelonSeven.cloneNode(true);
+      element.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionSeven.appendChild(element);
+
+      const konkurrence = skabelonEight.cloneNode(true);
+      konkurrence.querySelector(".konkurrence_titel").innerHTML = indhold.konkurrence_titel;
+      konkurrence.querySelector(".punkt_1").innerHTML = indhold.konkurrencekrav_1;
+      konkurrence.querySelector(".punkt_2").innerHTML = indhold.konkurrencekrav_2;
+      konkurrence.querySelector(".punkt_3").innerHTML = indhold.konkurrencekrav_3;
+      konkurrence.querySelector(".punkt_4").innerHTML = indhold.konkurrencekrav_4;
+      konkurrence.querySelector(".konkurrence_img_1").src = indhold.konkurrence_img_1.guid;
+      konkurrence.querySelector(".konkurrence_img_2").src = indhold.konkurrence_img_2.guid;
+      konkurrence.querySelector(".konkurrence_img_3").src = indhold.konkurrence_img_3.guid;
+      konkurrence.querySelector(".konkurrence_img_4").src = indhold.konkurrence_img_4.guid;
+      sectionEight.appendChild(konkurrence);
     }
 
     async function startSektionTwo() {
@@ -133,7 +191,7 @@
     function visTwo() {
       const klon = skabelonTwo.cloneNode(true);
       klon.querySelector(".overskrift").innerHTML = indhold.titel;
-      klon.querySelector(".indhold_1").innerHTML = indhold.content.rendered;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
       sectionTwo.appendChild(klon);
     }
 
