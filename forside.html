@@ -42,7 +42,7 @@
     </div>
   </template>
 
-  <section class="container_row p-5" id="section_3"></section>
+  <section class="container_row container p-5" id="section_3"></section>
   <template id="template_three">
     <div>
       <div id="product_1">
@@ -103,10 +103,31 @@
       <div class="col-lg-3 col-6 mt-3">
         <img class="konkurrence_img_4">
       </div>
-
-
-
     </div>
+  </template>
+
+  <section id="section_9" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-center"></section>
+  <template id="template_nine">
+    <div>
+      <h4 class="citatfirst">"</h4>
+    </div>
+    <div>
+      <h4 class="citat col-lg-8"></h4>
+      <p class="navn"></p>
+    </div>
+  </template>
+
+  <section id="section_10" class="p-4 container-fluid color"></section>
+  <template id="template_ten">
+    <div class="p-lg-5 container">
+      <h1 class="overskrift"></h1>
+      <p class="indhold column-count"></p>
+    </div>
+  </template>
+
+  <section id="section_11"> </section>
+  <template id="template_eleven">
+    <img class="fifth_element">
   </template>
 
   <!-- Optional JavaScript; choose one of the two! -->
@@ -125,6 +146,8 @@
     document.addEventListener("DOMContentLoaded", startSektionThree);
     document.addEventListener("DOMContentLoaded", startSektionFive);
     document.addEventListener("DOMContentLoaded", startSektionSix);
+    document.addEventListener("DOMContentLoaded", startSektionNine);
+    document.addEventListener("DOMContentLoaded", startSektionTen);
 
     const sectionOne = document.querySelector("#section_1");
     const skabelonOne = document.querySelector("#template_one").content;
@@ -146,6 +169,15 @@
 
     const sectionEight = document.querySelector("#section_8");
     const skabelonEight = document.querySelector("#template_eight").content;
+
+    const sectionNine = document.querySelector("#section_9");
+    const skabelonNine = document.querySelector("#template_nine").content;
+
+    const sectionTen = document.querySelector("#section_10");
+    const skabelonTen = document.querySelector("#template_ten").content;
+
+    const sectionEleven = document.querySelector("#section_11");
+    const skabelonEleven = document.querySelector("#template_eleven").content;
 
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
@@ -178,6 +210,10 @@
       konkurrence.querySelector(".konkurrence_img_3").src = indhold.konkurrence_img_3.guid;
       konkurrence.querySelector(".konkurrence_img_4").src = indhold.konkurrence_img_4.guid;
       sectionEight.appendChild(konkurrence);
+
+      const elementTwo = skabelonEleven.cloneNode(true);
+      elementTwo.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionEleven.appendChild(elementTwo);
     }
 
     async function startSektionTwo() {
@@ -241,6 +277,36 @@
       klon.querySelector(".overskrift").innerHTML = indhold.titel;
       klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
       sectionSix.appendChild(klon);
+    }
+
+    async function startSektionNine() {
+      let wpEnd = `indhold/83`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visNine();
+
+    }
+
+    function visNine() {
+      const klon = skabelonNine.cloneNode(true);
+      klon.querySelector(".citat").innerHTML = indhold.titel;
+      klon.querySelector(".navn").innerHTML = indhold.citat_af;
+      sectionNine.appendChild(klon);
+    }
+
+    async function startSektionTen() {
+      let wpEnd = `indhold/82`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visTen();
+
+    }
+
+    function visTen() {
+      const klon = skabelonTen.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
+      sectionTen.appendChild(klon);
     }
 
   </script>
