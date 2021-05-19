@@ -110,16 +110,16 @@
 
 
     async function startSektionOne() {
-      let wpEnd = `campagnetitel`;
+      let wpEnd = `indhold/66`;
       const respons = await fetch(wp + wpEnd);
-      let json = await respons.json();
+      indhold = await respons.json();
+      visOne();
+    }
 
-      console.log(json);
-      json.forEach(campagnetitel => {
-        const klon = skabelonOne.cloneNode(true);
-        klon.querySelector(".campaign_name").innerHTML = campagnetitel.overskrift;
-        sectionOne.appendChild(klon);
-      })
+    function visOne() {
+      const klon = skabelonOne.cloneNode(true);
+      klon.querySelector(".campaign_name").innerHTML = indhold.titel;
+      sectionOne.appendChild(klon);
     }
 
     async function startSektionTwo() {
