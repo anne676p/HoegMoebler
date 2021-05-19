@@ -37,7 +37,7 @@
     <div class="container d-flex flex-column align-items-center p-5">
       <h1 class="overskrift"></h1>
       <div class="text-wrap">
-        <p class="text-break indhold"></p>
+        <p class="text-break indhold_1"></p>
       </div>
     </div>
   </template>
@@ -64,6 +64,14 @@
     </div>
   </template>
 
+  <section id="section_6" class="color p-4"></section>
+  <template class="container-fluid" id="template_six">
+    <div class="p-lg-5">
+      <h1 class="overskrift"></h1>
+      <p class="indhold column-count"></p>
+    </div>
+  </template>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -80,6 +88,7 @@
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
     document.addEventListener("DOMContentLoaded", startSektionFive);
+    document.addEventListener("DOMContentLoaded", startSektionSix);
 
     const sectionOne = document.querySelector("#section_1");
     const skabelonOne = document.querySelector("#template_one").content;
@@ -92,6 +101,9 @@
 
     const sectionFive = document.querySelector("#section_5");
     const skabelonFive = document.querySelector("#template_five").content;
+
+    const sectionSix = document.querySelector("#section_6");
+    const skabelonSix = document.querySelector("#template_six").content;
 
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
@@ -111,17 +123,18 @@
     }
 
     async function startSektionTwo() {
-      let wpEnd = `tekst`;
+      let wpEnd = `tekst/40`;
       const respons = await fetch(wp + wpEnd);
-      let json = await respons.json();
+      tekst = await respons.json();
+      visTwo();
 
-      console.log(json);
-      json.forEach(tekst => {
-        const klon = skabelonTwo.cloneNode(true);
-        klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
-        klon.querySelector(".indhold").innerHTML = tekst.kolonne_1;
-        sectionTwo.appendChild(klon);
-      })
+    }
+
+    function visTwo() {
+      const klon = skabelonTwo.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
+      klon.querySelector(".indhold_1").innerHTML = tekst.kolonne_1;
+      sectionTwo.appendChild(klon);
     }
 
     async function startSektionThree() {
@@ -153,6 +166,21 @@
         klon.querySelector(".navn").innerHTML = citat.navn;
         sectionFive.appendChild(klon);
       })
+    }
+
+    async function startSektionSix() {
+      let wpEnd = `tekst/58`;
+      const respons = await fetch(wp + wpEnd);
+      tekst = await respons.json();
+      visSix();
+
+    }
+
+    function visSix() {
+      const klon = skabelonSix.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
+      klon.querySelector(".indhold").innerHTML = tekst.content.rendered;
+      sectionSix.appendChild(klon);
     }
 
   </script>
