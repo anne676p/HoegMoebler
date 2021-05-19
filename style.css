@@ -16,6 +16,7 @@ body {
 
 .citat {
   font-style: italic;
+  text-transform: uppercase;
 }
 
 .color {

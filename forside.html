@@ -37,7 +37,7 @@
     <div class="container d-flex flex-column align-items-center p-5">
       <h1 class="overskrift"></h1>
       <div class="text-wrap">
-        <p class="text-break indhold_1"></p>
+        <p class="text-break indhold"></p>
       </div>
     </div>
   </template>
@@ -123,17 +123,17 @@
     }
 
     async function startSektionTwo() {
-      let wpEnd = `tekst/40`;
+      let wpEnd = `indhold/68`;
       const respons = await fetch(wp + wpEnd);
-      tekst = await respons.json();
+      indhold = await respons.json();
       visTwo();
 
     }
 
     function visTwo() {
       const klon = skabelonTwo.cloneNode(true);
-      klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
-      klon.querySelector(".indhold_1").innerHTML = tekst.kolonne_1;
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold_1").innerHTML = indhold.content.rendered;
       sectionTwo.appendChild(klon);
     }
 
@@ -155,31 +155,33 @@
     }
 
     async function startSektionFive() {
-      let wpEnd = `citat`;
+      let wpEnd = `indhold/69`;
       const respons = await fetch(wp + wpEnd);
-      let json = await respons.json();
+      indhold = await respons.json();
+      visFive();
 
-      console.log(json);
-      json.forEach(citat => {
-        const klon = skabelonFive.cloneNode(true);
-        klon.querySelector(".citat").innerHTML = citat.citat;
-        klon.querySelector(".navn").innerHTML = citat.navn;
-        sectionFive.appendChild(klon);
-      })
     }
 
+    function visFive() {
+      const klon = skabelonFive.cloneNode(true);
+      klon.querySelector(".citat").innerHTML = indhold.titel;
+      klon.querySelector(".navn").innerHTML = indhold.citat_af;
+      sectionFive.appendChild(klon);
+    }
+
+
     async function startSektionSix() {
-      let wpEnd = `tekst/58`;
+      let wpEnd = `indhold/70`;
       const respons = await fetch(wp + wpEnd);
-      tekst = await respons.json();
+      indhold = await respons.json();
       visSix();
 
     }
 
     function visSix() {
       const klon = skabelonSix.cloneNode(true);
-      klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
-      klon.querySelector(".indhold").innerHTML = tekst.content.rendered;
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
       sectionSix.appendChild(klon);
     }
 
