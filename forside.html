@@ -111,17 +111,18 @@
     }
 
     async function startSektionTwo() {
-      let wpEnd = `tekst`;
+      let wpEnd = `tekst/40`;
       const respons = await fetch(wp + wpEnd);
-      let json = await respons.json();
+      tekst = await respons.json();
+      visTwo();
 
-      console.log(json);
-      json.forEach(tekst => {
-        const klon = skabelonTwo.cloneNode(true);
-        klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
-        klon.querySelector(".indhold").innerHTML = tekst.kolonne_1;
-        sectionTwo.appendChild(klon);
-      })
+    }
+
+    function visTwo() {
+      const klon = skabelonTwo.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = tekst.overskrift;
+      klon.querySelector(".indhold").innerHTML = tekst.kolonne_1;
+      sectionTwo.appendChild(klon);
     }
 
     async function startSektionThree() {
