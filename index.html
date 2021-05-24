@@ -21,26 +21,33 @@
 <body>
 
   <section id="section_4" class="container p-5"></section>
-  <template id="template_four">
-    <div class="d-lg-flex">
-      <div class="d-flex">
-        <div>
-          <h2 class="navn" style="margin-right: 10px;"></h2>
-          <p class="designer"></p>
+  <div>
+    <div class="btn" id="stol1"></div>
+    <div class="btn stol2"></div>
+    <div class="btn stol3"></div>
+    <div class="btn stol4"></div>
+  </div>
+  <div class="d-flex">
+    <template id="template_four">
+      <div class="d-lg-flex">
+        <div class="d-flex">
+          <div>
+            <h2 class="navn" style="margin-right: 10px;"></h2>
+            <p class="designer"></p>
+          </div>
+          <div style="height: 100%">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
         </div>
-        <div style="height: 100%">
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-          </svg>
+        <div style="width: 400px;">
+          <img class="billede">
         </div>
       </div>
-
-      <div style="width: 400px;">
-        <img class="billede">
-      </div>
-    </div>
-  </template>
+    </template>
+  </div>
 
 
 
@@ -57,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
+    document.addEventListener("DOMContentLoaded", start);
     document.addEventListener("DOMContentLoaded", startSektionFour);
 
     const sectionFour = document.querySelector("#section_4");
@@ -64,20 +72,26 @@
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
+    function start() {
+      document.getElementById("stol1").addEventListener("click", startSektionFour);
+
+    }
+
     async function startSektionFour() {
-      let wpEnd = `kampagneprodukt`;
+      let wpEnd = `kampagneprodukt/86`;
       const respons = await fetch(wp + wpEnd);
-      let json = await respons.json();
+      kat = await respons.json();
+      Visprodukt1();
+    }
 
-      console.log(json);
-      json.forEach(kampagneprodukt => {
-        const klon = skabelonFour.cloneNode(true);
-        klon.querySelector(".billede").src = kampagneprodukt.billede.guid;
-        klon.querySelector(".navn").innerHTML = kampagneprodukt.produktnavn;
-        klon.querySelector(".designer").innerHTML = kampagneprodukt.designer;
+    function Visprodukt1() {
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      sectionFour.appendChild(klon);
+      let vid = document.createElement("video");
 
-        sectionFour.appendChild(klon);
-      })
     }
 
   </script>
