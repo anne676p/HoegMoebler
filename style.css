@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 video {
   object-fit: cover;
   width: 100%;
@@ -155,8 +156,23 @@ img {
 }
 
 
-/* On screens that are 992px or less, set the background color to blue */
 @media screen and (min-width: 992px) {
+  html {
+    cursor: none;
+  }
+
+  #circularcursor {
+    background-color: transparent;
+    border: 2px solid #D95F18;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+  }
+
   .rotate {
     transform-origin: 0 0;
     transform: rotate(90deg);
