@@ -9,6 +9,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link href="rwd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <title>HAVEaSEAT</title>
 
@@ -19,10 +20,15 @@
 </head>
 
 <body>
-
+  <video playsinline autoplay muted loop poster="img/PLACEHOLDER.png" id="bgvid">
+    <source src="http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/splash_test_01_lilla.mp4" type="video/mp4">
+  </video>
+  <div class="color">
+    <div class="arrow animate__animated animate__heartBeat animate__infinite infinite animate__slow align-self-center"></div>
+  </div>
   <section id="section_1"></section>
-  <template class="container-fluid splash_one" id="template_one">
-    <div class="d-flex flex-column align-items-end pt-4 pe-2 ">
+  <template class="container-fluid" id="template_one">
+    <div class="d-flex flex-column align-items-end">
       <div>
         <div class="logo"></div>
       </div>
@@ -32,7 +38,7 @@
     </div>
   </template>
 
-  <section id="section_2" class="color"></section>
+  <section id="section_2" class="color p-5"></section>
   <template class="container-fluid" id="template_two">
     <div class="container d-flex flex-column align-items-center p-5">
       <h1 class="overskrift"></h1>
@@ -53,14 +59,14 @@
     </div>
   </template>
 
-  <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-center"></section>
+  <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
   <template id="template_five">
     <div>
       <h4 class="citatfirst">"</h4>
     </div>
-    <div>
+    <div class="col-lg-5">
       <h4 class="citat col-lg-8"></h4>
-      <p class="navn"></p>
+      <p class="navn col-lg-3"></p>
     </div>
   </template>
 
@@ -106,14 +112,14 @@
     </div>
   </template>
 
-  <section id="section_9" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-center"></section>
+  <section id="section_9" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
   <template id="template_nine">
     <div>
       <h4 class="citatfirst">"</h4>
     </div>
-    <div>
+    <div class="col-lg-5">
       <h4 class="citat col-lg-8"></h4>
-      <p class="navn"></p>
+      <p class="navn col-lg-2"></p>
     </div>
   </template>
 
@@ -188,6 +194,7 @@
       const respons = await fetch(wp + wpEnd);
       indhold = await respons.json();
       visAssets();
+
     }
 
     function visAssets() {
