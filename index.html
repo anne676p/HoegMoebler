@@ -21,14 +21,15 @@
 <body>
 
   <section id="section_4" class="container p-5"></section>
-  <div>
-    <div class="btn" id="stol1"></div>
-    <div class="btn stol2"></div>
-    <div class="btn stol3"></div>
-    <div class="btn stol4"></div>
-  </div>
+
   <div class="d-flex">
     <template id="template_four">
+      <div>
+        <div class="btn" id="stol1"></div>
+        <div class="btn stol2"></div>
+        <div class="btn stol3"></div>
+        <div class="btn stol4"></div>
+      </div>
       <div class="d-lg-flex">
         <div class="d-flex">
           <div>
@@ -89,6 +90,7 @@
       klon.querySelector(".billede").src = kat.billede.guid;
       klon.querySelector(".navn").innerHTML = kat.produktnavn;
       klon.querySelector(".designer").innerHTML = kat.designer;
+      sectionFour.innerHTML = "";
       sectionFour.appendChild(klon);
       let vid = document.createElement("video");
 
