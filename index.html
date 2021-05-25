@@ -22,14 +22,14 @@
 
   <section id="section_4" class="container p-5"></section>
 
-  <div class="d-flex">
+  <div class="d-flex align-items-lg-end flex-column">
+    <div class="d-flex align-items-lg-end flex-column" id="bntcolumn">
+      <a class="btn m-2 p-3" id="kamp_1"> CH24 // Y-stol </a>
+      <a class="btn m-2 p-3" id="kamp_2"> CH24 // Y-stol </a>
+      <a class="btn m-2 p-3" id="kamp_3"> CH24 // Y-stol </a>
+      <a class="btn m-2 p-3" id="kamp_4"> CH24 // Y-stol </a>
+    </div>
     <template id="template_four">
-      <div>
-        <div class="btn" id="stol1"></div>
-        <div class="btn stol2"></div>
-        <div class="btn stol3"></div>
-        <div class="btn stol4"></div>
-      </div>
       <div class="d-lg-flex">
         <div class="d-flex">
           <div>
@@ -43,16 +43,12 @@
             </svg>
           </div>
         </div>
-        <div style="width: 400px;">
+        <div class="ms-lg-5" style="width: 400px;">
           <img class="billede">
         </div>
       </div>
     </template>
   </div>
-
-
-
-
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -66,7 +62,7 @@
     -->
   <script>
     document.addEventListener("DOMContentLoaded", start);
-    document.addEventListener("DOMContentLoaded", startSektionFour);
+    document.addEventListener("DOMContentLoaded", startSektionFourOne);
 
     const sectionFour = document.querySelector("#section_4");
     const skabelonFour = document.querySelector("#template_four").content;
@@ -74,11 +70,13 @@
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
     function start() {
-      document.getElementById("stol1").addEventListener("click", startSektionFour);
-
+      document.getElementById("kamp_1").addEventListener("click", startSektionFourOne);
+      document.getElementById("kamp_2").addEventListener("click", startSektionFourTwo);
+      document.getElementById("kamp_3").addEventListener("click", startSektionFourThree);
+      document.getElementById("kamp_4").addEventListener("click", startSektionFourFour);
     }
 
-    async function startSektionFour() {
+    async function startSektionFourOne() {
       let wpEnd = `kampagneprodukt/86`;
       const respons = await fetch(wp + wpEnd);
       kat = await respons.json();
@@ -86,14 +84,76 @@
     }
 
     function Visprodukt1() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_1").classList.add("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
       const klon = skabelonFour.cloneNode(true);
       klon.querySelector(".billede").src = kat.billede.guid;
       klon.querySelector(".navn").innerHTML = kat.produktnavn;
       klon.querySelector(".designer").innerHTML = kat.designer;
-      sectionFour.innerHTML = "";
       sectionFour.appendChild(klon);
-      let vid = document.createElement("video");
+    }
 
+    async function startSektionFourTwo() {
+      let wpEnd = `kampagneprodukt/85`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt2();
+    }
+
+    function Visprodukt2() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_2").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      sectionFour.appendChild(klon);
+    }
+
+    async function startSektionFourThree() {
+      let wpEnd = `kampagneprodukt/21`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt3();
+    }
+
+    function Visprodukt3() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_3").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      sectionFour.appendChild(klon);
+    }
+
+    async function startSektionFourFour() {
+      let wpEnd = `kampagneprodukt/13`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt4();
+    }
+
+    function Visprodukt4() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_4").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      sectionFour.appendChild(klon);
     }
 
   </script>
