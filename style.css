@@ -19,6 +19,8 @@ video {
   text-align: center;
 }
 
+
+
 .arrow {
   left: 50%;
   width: 30px;
@@ -210,6 +212,20 @@ img {
 
 }
 
+@media screen and (min-width: 1500px) {
+  .container_row {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  .rotate {
+    right: -8%;
+
+  }
+
+  .citatfirst {
+    top: 6vw;
+  }
+}
 
 
 /* SEKTION 2 */
