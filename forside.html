@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
   <div id="circularcursor"></div>
   <video playsinline autoplay muted loop poster="img/PLACEHOLDER.png" id="bgvid">
     <source src="http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/splash_Hoegh_Moebler-1.mp4" type="video/mp4">
@@ -38,6 +39,11 @@
       </div>
     </div>
   </template>
+  <div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a href="https://www.instagram.com/hoghmobler/" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a>
+  </div>
 
   <section id="section_2" class="brown p-lg-5"></section>
   <template class="container-fluid" id="template_two">
@@ -123,20 +129,28 @@
     </div>
   </template>
 
+  <section id="section_2_2" class="brown"> </section>
+  <template id="template_2_2">
+    <img class="fifth_element">
+  </template>
+
   <section class="container_row p-5" id="section_3"></section>
   <template id="template_three">
-    <div>
-      <div id="product_1">
-        <img class="billede">
-        <h3 class="overskrift"></h3>
-        <p class="pris"></p>
-      </div>
+    <div class="pt-5 pb-5">
+      <a href="https://hogh-mobler.myshopify.com/collections/haveaseat">
+        <div id="product_1">
+          <img class="billede">
+          <h4 class="overskrift"></h4>
+          <p class="pris"></p>
+          <button type="button" class="btn">Læs mere</button>
+        </div>
+      </a>
     </div>
   </template>
 
   <section id="section_4" class="container p-5"></section>
 
-  <div class="d-flex align-items-lg-end flex-column" style="height: 0%;">
+  <div class="d-flex align-items-lg-end flex-column sekfour">
     <div class="d-flex align-items-lg-end flex-column" id="bntcolumn">
       <a class="btn m-2 p-3" id="kamp_1"> CH24 // Y-STOL </a>
       <a class="btn m-2 p-3" id="kamp_2"> CH20 // ELBOW CHAIR </a>
@@ -226,14 +240,14 @@
       <div class="top">
         <h2 style="color: #431E1E;" class="konkurrence_titel"></h2>
         <ul class="d-flex flex-wrap" style="color: #431E1E;">
-          <li class="col-6 col-lg-3 text-lg-center punkt_1"></li>
-          <li class="col-6 col-lg-3 text-lg-center punkt_2"></li>
-          <li class="col-6 col-lg-2 text-lg-center punkt_3"></li>
-          <li class="col-6 col-lg-2 text-lg-center punkt_4"></li>
+          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_1"></li>
+          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_2"></li>
+          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_3"></li>
+          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_4"></li>
         </ul>
       </div>
     </div>
-    <div class="row pt-5 text-center">
+    <div class="row pt-5 pb-5 text-center">
       <div class="col-lg-3 col-6 mt-3">
         <img class="konkurrence_img_1">
       </div>
@@ -313,6 +327,9 @@
 
     const sectionTwo = document.querySelector("#section_2");
     const skabelonTwo = document.querySelector("#template_two").content;
+
+    const sectionTwoTwo = document.querySelector("#section_2_2");
+    const skabelonTwoTwo = document.querySelector("#template_2_2").content;
 
     const sectionThree = document.querySelector("#section_3");
     const skabelonThree = document.querySelector("#template_three").content;
@@ -419,6 +436,10 @@
       const elementTwo = skabelonEleven.cloneNode(true);
       elementTwo.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
       sectionEleven.appendChild(elementTwo);
+
+      const elementThree = skabelonTwoTwo.cloneNode(true);
+      elementThree.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionTwoTwo.appendChild(elementThree);
     }
 
 
