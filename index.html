@@ -9,6 +9,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link href="rwd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <title>HAVEaSEAT</title>
 
@@ -20,9 +21,136 @@
 
 <body>
 
+  <div id="circularcursor"></div>
+  <video playsinline autoplay muted loop poster="img/PLACEHOLDER.png" id="bgvid">
+    <source src="http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/splash_Hoegh_Moebler-1.mp4" type="video/mp4">
+  </video>
+  <div class="color">
+    <div class="arrow animate__animated animate__heartBeat animate__infinite infinite animate__slow align-self-center"></div>
+  </div>
+  <div id="section_1"></div>
+  <template class="container-fluid" id="template_one">
+    <div class="d-flex flex-column align-items-end">
+      <div>
+        <div class="logo"></div>
+      </div>
+      <div>
+        <h3 class="rotate campaign_name"></h3>
+      </div>
+    </div>
+  </template>
+  <div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a href="https://www.instagram.com/hoghmobler/" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a>
+  </div>
+
+  <section id="section_2" class="brown p-lg-5"></section>
+  <template class="container-fluid" id="template_two">
+    <div class="container d-flex flex-column align-items-center p-5">
+      <h1 class="overskrift"></h1>
+      <div class="text-wrap">
+        <p class="text-break indhold"></p>
+      </div>
+    </div>
+    <div class="grid-container row_collage" style="border-style: solid;">
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic1" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic1">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic2" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic2">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic3" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic3">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic4" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic4">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic5" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic5">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic6" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic6">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic7 txtpic7" class="collage_img">
+          <div class="overlay">
+            <div class="text">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic8" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic8">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <section id="section_2_2" class="brown"> </section>
+  <template id="template_2_2">
+    <img class="fifth_element">
+  </template>
+
+  <section class="container_row p-5" id="section_3"></section>
+  <template id="template_three">
+    <div class="pt-5 pb-5">
+      <a href="https://hogh-mobler.myshopify.com/collections/haveaseat">
+        <div id="product_1">
+          <img class="billede">
+          <h4 class="overskrift"></h4>
+          <p class="pris"></p>
+          <button type="button" class="btn">Læs mere</button>
+        </div>
+      </a>
+    </div>
+  </template>
+
   <section id="section_4" class="container p-5"></section>
 
-  <div class="d-flex align-items-lg-end flex-column">
+  <div class="d-flex align-items-lg-end flex-column sekfour">
     <div class="d-flex align-items-lg-end flex-column" id="bntcolumn">
       <a class="btn m-2 p-3" id="kamp_1"> CH24 // Y-STOL </a>
       <a class="btn m-2 p-3" id="kamp_2"> CH20 // ELBOW CHAIR </a>
@@ -36,7 +164,7 @@
             <h2 class="navn" style="margin-right: 10px;"></h2>
             <p class="designer"></p>
           </div>
-          <div>
+          <div style="height: 100%;">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" id="circle1" />
               <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
@@ -82,10 +210,92 @@
     </template>
   </div>
 
+  <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
+  <template id="template_five">
+    <div>
+      <h4 class="citatfirst">"</h4>
+    </div>
+    <div class="col-lg-5">
+      <h4 class="citat col-lg-8"></h4>
+      <p class="navn col-lg-3"></p>
+    </div>
+  </template>
+
+  <section id="section_6" class="p-4 container-fluid color"></section>
+  <template id="template_six">
+    <div class="p-lg-5 container">
+      <h1 class="overskrift pb-4"></h1>
+      <p class="indhold column-count"></p>
+    </div>
+  </template>
+
+  <section id="section_7"> </section>
+  <template id="template_seven">
+    <img class="fifth_element">
+  </template>
+
+  <section id="section_8" class="container"> </section>
+  <template id="template_eight">
+    <div class="container">
+      <div class="top">
+        <h2 style="color: #431E1E;" class="konkurrence_titel"></h2>
+        <ul class="d-flex flex-wrap" style="color: #431E1E;">
+          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_1"></li>
+          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_2"></li>
+          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_3"></li>
+          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_4"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row pt-5 pb-5 text-center">
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_1">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_2">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_3">
+      </div>
+      <div class="col-lg-3 col-6 mt-3">
+        <img class="konkurrence_img_4">
+      </div>
+    </div>
+  </template>
+
+  <section id="section_9" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
+  <template id="template_nine">
+    <div>
+      <h4 class="citatfirst">"</h4>
+    </div>
+    <div class="col-lg-5">
+      <h4 class="citat col-lg-8"></h4>
+      <p class="navn col-lg-2"></p>
+    </div>
+  </template>
+
+  <section id="section_10" class="p-4 container-fluid color"></section>
+  <template id="template_ten">
+    <div class="p-lg-5 container">
+      <h1 class="overskrift pb-4"></h1>
+      <p class="indhold column-count"></p>
+    </div>
+  </template>
+
+  <section id="section_11"> </section>
+  <template id="template_eleven">
+    <img class="fifth_element">
+  </template>
+
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  <script src="gsap.min.js"></script>
+  <script src="ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
@@ -93,14 +303,193 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
+    $(document).ready(function() {
+      $(document).on('mousemove', function(e) {
+        $('#circularcursor').css({
+          left: e.pageX,
+          top: e.pageY
+        });
+      })
+    });
+
+    document.addEventListener("DOMContentLoaded", startAssets);
+    document.addEventListener("DOMContentLoaded", startSektionTwo);
+    document.addEventListener("DOMContentLoaded", startSektionThree);
     document.addEventListener("DOMContentLoaded", start);
     document.addEventListener("DOMContentLoaded", startSektionFourOne);
+    document.addEventListener("DOMContentLoaded", startSektionFive);
+    document.addEventListener("DOMContentLoaded", startSektionSix);
+    document.addEventListener("DOMContentLoaded", startSektionNine);
+    document.addEventListener("DOMContentLoaded", startSektionTen);
+
+    const sectionOne = document.querySelector("#section_1");
+    const skabelonOne = document.querySelector("#template_one").content;
+
+    const sectionTwo = document.querySelector("#section_2");
+    const skabelonTwo = document.querySelector("#template_two").content;
+
+    const sectionTwoTwo = document.querySelector("#section_2_2");
+    const skabelonTwoTwo = document.querySelector("#template_2_2").content;
+
+    const sectionThree = document.querySelector("#section_3");
+    const skabelonThree = document.querySelector("#template_three").content;
 
     const sectionFour = document.querySelector("#section_4");
     const skabelonFour = document.querySelector("#template_four").content;
 
+    const sectionFive = document.querySelector("#section_5");
+    const skabelonFive = document.querySelector("#template_five").content;
+
+    const sectionSix = document.querySelector("#section_6");
+    const skabelonSix = document.querySelector("#template_six").content;
+
+    const sectionSeven = document.querySelector("#section_7");
+    const skabelonSeven = document.querySelector("#template_seven").content;
+
+    const sectionEight = document.querySelector("#section_8");
+    const skabelonEight = document.querySelector("#template_eight").content;
+
+    const sectionNine = document.querySelector("#section_9");
+    const skabelonNine = document.querySelector("#template_nine").content;
+
+    const sectionTen = document.querySelector("#section_10");
+    const skabelonTen = document.querySelector("#template_ten").content;
+
+    const sectionEleven = document.querySelector("#section_11");
+    const skabelonEleven = document.querySelector("#template_eleven").content;
+
+
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
+    function start() {
+      const root = document.documentElement;
+
+      const sections = [...document.querySelectorAll("section")];
+
+      let options = {
+        rootMargin: "0px 0px",
+        threshold: .5
+      };
+
+      const callback = (entries, observer) => {
+        entries.forEach(entry => {
+          const {
+            target
+          } = entry;
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      sections.forEach((section, forside) => {
+        observer.observe(section)
+      })
+
+      sections.forEach((section) => {
+        const divs = section.querySelectorAll("div:not([role='tablist'])");
+
+        gsap.from(divs, {
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          stagger: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "center center",
+            scrub: true,
+          },
+        });
+      });
+    }
+
+
+    async function startAssets() {
+      let wpEnd = `indhold/66`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visAssets();
+
+    }
+
+    function visAssets() {
+      const klon = skabelonOne.cloneNode(true);
+      klon.querySelector(".campaign_name").innerHTML = indhold.titel;
+      sectionOne.appendChild(klon);
+
+      const element = skabelonSeven.cloneNode(true);
+      element.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionSeven.appendChild(element);
+
+      const konkurrence = skabelonEight.cloneNode(true);
+      konkurrence.querySelector(".konkurrence_titel").innerHTML = indhold.konkurrence_titel;
+      konkurrence.querySelector(".punkt_1").innerHTML = indhold.konkurrencekrav_1;
+      konkurrence.querySelector(".punkt_2").innerHTML = indhold.konkurrencekrav_2;
+      konkurrence.querySelector(".punkt_3").innerHTML = indhold.konkurrencekrav_3;
+      konkurrence.querySelector(".punkt_4").innerHTML = indhold.konkurrencekrav_4;
+      konkurrence.querySelector(".konkurrence_img_1").src = indhold.konkurrence_img_1.guid;
+      konkurrence.querySelector(".konkurrence_img_2").src = indhold.konkurrence_img_2.guid;
+      konkurrence.querySelector(".konkurrence_img_3").src = indhold.konkurrence_img_3.guid;
+      konkurrence.querySelector(".konkurrence_img_4").src = indhold.konkurrence_img_4.guid;
+      sectionEight.appendChild(konkurrence);
+
+      const elementTwo = skabelonEleven.cloneNode(true);
+      elementTwo.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionEleven.appendChild(elementTwo);
+
+      const elementThree = skabelonTwoTwo.cloneNode(true);
+      elementThree.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
+      sectionTwoTwo.appendChild(elementThree);
+    }
+
+
+    async function startSektionTwo() {
+      let wpEnd = `samarbejde/143`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visTwo();
+
+    }
+
+    function visTwo() {
+      const klon = skabelonTwo.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
+      klon.querySelector(".pic1").src = indhold.collagepic_1.guid;
+      klon.querySelector(".pic2").src = indhold.collagepic_2.guid;
+      klon.querySelector(".pic3").src = indhold.collagepic_3.guid;
+      klon.querySelector(".pic4").src = indhold.collagepic_4.guid;
+      klon.querySelector(".pic5").src = indhold.collagepic_5.guid;
+      klon.querySelector(".pic6").src = indhold.collagepic_6.guid;
+      klon.querySelector(".pic7").src = indhold.collagepic_7.guid;
+      klon.querySelector(".pic8").src = indhold.collagepic_8.guid;
+      klon.querySelector(".txtpic1").innerHTML = indhold.collagepic_1text;
+      klon.querySelector(".txtpic2").innerHTML = indhold.collagepic_2text;
+      klon.querySelector(".txtpic3").innerHTML = indhold.collagepic_3text;
+      klon.querySelector(".txtpic4").innerHTML = indhold.collagepic_4text;
+      klon.querySelector(".txtpic5").innerHTML = indhold.collagepic_5text;
+      klon.querySelector(".txtpic6").innerHTML = indhold.collagepic_6text;
+      klon.querySelector(".txtpic7").innerHTML = indhold.collagepic_7text;
+      klon.querySelector(".txtpic8").innerHTML = indhold.collagepic_8text;
+      sectionTwo.appendChild(klon);
+    }
+
+    async function startSektionThree() {
+      let wpEnd = `produktvisning`;
+      const respons = await fetch(wp + wpEnd);
+      let json = await respons.json();
+
+      console.log(json);
+      json.forEach(produktvisning => {
+        const klon = skabelonThree.cloneNode(true);
+        klon.querySelector(".billede").src = produktvisning.produktvideo.guid;
+        klon.querySelector(".overskrift").innerHTML = produktvisning.produktnavn;
+        klon.querySelector(".pris").innerHTML = produktvisning.pris + " DKK";
+
+
+        sectionThree.appendChild(klon);
+      })
+    }
 
     function start() {
       document.getElementById("kamp_1").addEventListener("click", startSektionFourOne);
@@ -512,6 +901,69 @@
           modal3.style.display = "none";
         }
       }
+    }
+
+
+    async function startSektionFive() {
+      let wpEnd = `indhold/69`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visFive();
+
+    }
+
+    function visFive() {
+      const klon = skabelonFive.cloneNode(true);
+      klon.querySelector(".citat").innerHTML = indhold.titel;
+      klon.querySelector(".navn").innerHTML = indhold.citat_af;
+      sectionFive.appendChild(klon);
+    }
+
+
+    async function startSektionSix() {
+      let wpEnd = `indhold/70`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visSix();
+
+    }
+
+    function visSix() {
+      const klon = skabelonSix.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
+      sectionSix.appendChild(klon);
+    }
+
+    async function startSektionNine() {
+      let wpEnd = `indhold/83`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visNine();
+
+    }
+
+    function visNine() {
+      const klon = skabelonNine.cloneNode(true);
+      klon.querySelector(".citat").innerHTML = indhold.titel;
+      klon.querySelector(".navn").innerHTML = indhold.citat_af;
+      sectionNine.appendChild(klon);
+    }
+
+    async function startSektionTen() {
+      let wpEnd = `indhold/82`;
+      const respons = await fetch(wp + wpEnd);
+      indhold = await respons.json();
+      visTen();
+
+    }
+
+    function visTen() {
+      const klon = skabelonTen.cloneNode(true);
+      klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
+      sectionTen.appendChild(klon);
+      start();
     }
 
   </script>
