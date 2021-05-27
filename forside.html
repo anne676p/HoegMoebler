@@ -22,7 +22,7 @@
 <body>
   <div id="circularcursor"></div>
   <video playsinline autoplay muted loop poster="img/PLACEHOLDER.png" id="bgvid">
-    <source src="http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/splash_test_01_lilla.mp4" type="video/mp4">
+    <source src="http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/splash_Hoegh_Moebler-1.mp4" type="video/mp4">
   </video>
   <div class="color">
     <div class="arrow animate__animated animate__heartBeat animate__infinite infinite animate__slow align-self-center"></div>
@@ -39,12 +39,86 @@
     </div>
   </template>
 
-  <section id="section_2" class="color p-5"></section>
+  <section id="section_2" class="brown p-lg-5"></section>
   <template class="container-fluid" id="template_two">
     <div class="container d-flex flex-column align-items-center p-5">
       <h1 class="overskrift"></h1>
       <div class="text-wrap">
         <p class="text-break indhold"></p>
+      </div>
+    </div>
+    <div class="grid-container row_collage" style="border-style: solid;">
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic1" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic1">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic2" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic2">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic3" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic3">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic4" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic4">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic5" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic5">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic6" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic6">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column_collage">
+        <div class="containercollage">
+          <img class="pic7 txtpic7" class="collage_img">
+          <div class="overlay">
+            <div class="text">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
+        <div class="containercollage">
+          <img class="pic8" class="collage_img">
+          <div class="overlay">
+            <div class="text txtpic8">
+              <p>Camilla elsker at kombinere de gamle klassikere med nye fund</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </template>
@@ -74,7 +148,7 @@
   <section id="section_6" class="p-4 container-fluid color"></section>
   <template id="template_six">
     <div class="p-lg-5 container">
-      <h1 class="overskrift"></h1>
+      <h1 class="overskrift pb-4"></h1>
       <p class="indhold column-count"></p>
     </div>
   </template>
@@ -127,7 +201,7 @@
   <section id="section_10" class="p-4 container-fluid color"></section>
   <template id="template_ten">
     <div class="p-lg-5 container">
-      <h1 class="overskrift"></h1>
+      <h1 class="overskrift pb-4"></h1>
       <p class="indhold column-count"></p>
     </div>
   </template>
@@ -282,7 +356,7 @@
 
 
     async function startSektionTwo() {
-      let wpEnd = `indhold/68`;
+      let wpEnd = `samarbejde/143`;
       const respons = await fetch(wp + wpEnd);
       indhold = await respons.json();
       visTwo();
@@ -293,6 +367,22 @@
       const klon = skabelonTwo.cloneNode(true);
       klon.querySelector(".overskrift").innerHTML = indhold.titel;
       klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
+      klon.querySelector(".pic1").src = indhold.collagepic_1.guid;
+      klon.querySelector(".pic2").src = indhold.collagepic_2.guid;
+      klon.querySelector(".pic3").src = indhold.collagepic_3.guid;
+      klon.querySelector(".pic4").src = indhold.collagepic_4.guid;
+      klon.querySelector(".pic5").src = indhold.collagepic_5.guid;
+      klon.querySelector(".pic6").src = indhold.collagepic_6.guid;
+      klon.querySelector(".pic7").src = indhold.collagepic_7.guid;
+      klon.querySelector(".pic8").src = indhold.collagepic_8.guid;
+      klon.querySelector(".txtpic1").innerHTML = indhold.collagepic_1text;
+      klon.querySelector(".txtpic2").innerHTML = indhold.collagepic_2text;
+      klon.querySelector(".txtpic3").innerHTML = indhold.collagepic_3text;
+      klon.querySelector(".txtpic4").innerHTML = indhold.collagepic_4text;
+      klon.querySelector(".txtpic5").innerHTML = indhold.collagepic_5text;
+      klon.querySelector(".txtpic6").innerHTML = indhold.collagepic_6text;
+      klon.querySelector(".txtpic7").innerHTML = indhold.collagepic_7text;
+      klon.querySelector(".txtpic8").innerHTML = indhold.collagepic_8text;
       sectionTwo.appendChild(klon);
     }
 

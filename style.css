@@ -6,6 +6,44 @@ html {
   scroll-behavior: smooth;
 }
 
+.containercollage {
+  position: relative;
+  width: 100%;
+}
+
+.collage_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0%;
+  transition: .5s ease;
+  background-color: #F5F5F5;
+}
+
+.containercollage:hover .overlay {
+  opacity: 100%;
+}
+
+.text {
+  color: #431E1E;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
 video {
   object-fit: cover;
@@ -34,6 +72,32 @@ video {
   height: 100px;
 }
 
+.grid-container {
+  padding: 50px;
+  border-style: solid;
+}
+
+.row_collage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column_collage {
+  position: relative;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column_collage img {
+  display: block;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+
 .citat {
   font-style: italic;
   text-transform: uppercase;
@@ -41,6 +105,11 @@ video {
 
 .color {
   background-color: #431E1E;
+  color: #F5F5F5;
+}
+
+.brown {
+  background-color: #9D988B;
   color: #F5F5F5;
 }
 
@@ -86,6 +155,23 @@ img {
 .txtcontent {
   background-color: #D95F18;
   color: #F5F5F5;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column_collage {
+    flex: 50%;
+    max-width: 50%;
+  }
+
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column_collage {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 @keyframes rotate {
@@ -210,18 +296,22 @@ img {
   }
 
   #bntcolumn {
-    display: block;
     position: relative;
     top: -35vw;
   }
 
-  #bntcolumn a:hover {
-    width: 200px;
+  #bntcolumn a {
+    width: 250px;
   }
 
-  .active {
-    width: 200px;
+  #bntcolumn a:hover {
+    width: 300px;
   }
+
+  .kamp_billede {
+    width: 50%;
+  }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -237,6 +327,7 @@ img {
   .citatfirst {
     top: 6vw;
   }
+
 }
 
 
