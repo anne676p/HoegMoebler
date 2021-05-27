@@ -134,6 +134,68 @@
     </div>
   </template>
 
+  <section id="section_4" class="container p-5"></section>
+
+  <div class="d-flex align-items-lg-end flex-column" style="height: 0%;">
+    <div class="d-flex align-items-lg-end flex-column" id="bntcolumn">
+      <a class="btn m-2 p-3" id="kamp_1"> CH24 // Y-STOL </a>
+      <a class="btn m-2 p-3" id="kamp_2"> CH20 // ELBOW CHAIR </a>
+      <a class="btn m-2 p-3" id="kamp_3"> CH07 // SKALSTOLEN </a>
+      <a class="btn m-2 p-3" id="kamp_4"> CH25 // LOUNGESTOL </a>
+    </div>
+    <template id="template_four">
+      <div class="d-lg-flex">
+        <div class="d-flex">
+          <div>
+            <h2 class="navn" style="margin-right: 10px;"></h2>
+            <p class="designer"></p>
+          </div>
+          <div style="height: 100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" id="circle1" />
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="modalTxt"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kamp_billede d-flex flex-column">
+          <div class="d-flex align-items-center" style="height: 100%; position: absolute;">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" id="circle2" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+              </svg>
+              <div id="myModal2" class="modal">
+                <div class="modal-content">
+                  <span class="close2">&times;</span>
+                  <p class="modalTxt2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-self-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" id="circle3" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+            <div id="myModal3" class="modal">
+              <div class="modal-content">
+                <span class="close3">&times;</span>
+                <p class="modalTxt3"></p>
+              </div>
+            </div>
+          </div>
+          <div><img class="billede"></div>
+        </div>
+      </div>
+    </template>
+  </div>
+
   <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
   <template id="template_five">
     <div>
@@ -239,6 +301,8 @@
     document.addEventListener("DOMContentLoaded", startAssets);
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
+    document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", startSektionFourOne);
     document.addEventListener("DOMContentLoaded", startSektionFive);
     document.addEventListener("DOMContentLoaded", startSektionSix);
     document.addEventListener("DOMContentLoaded", startSektionNine);
@@ -252,6 +316,9 @@
 
     const sectionThree = document.querySelector("#section_3");
     const skabelonThree = document.querySelector("#template_three").content;
+
+    const sectionFour = document.querySelector("#section_4");
+    const skabelonFour = document.querySelector("#template_four").content;
 
     const sectionFive = document.querySelector("#section_5");
     const skabelonFive = document.querySelector("#template_five").content;
@@ -402,6 +469,419 @@
         sectionThree.appendChild(klon);
       })
     }
+
+    function start() {
+      document.getElementById("kamp_1").addEventListener("click", startSektionFourOne);
+      document.getElementById("kamp_2").addEventListener("click", startSektionFourTwo);
+      document.getElementById("kamp_3").addEventListener("click", startSektionFourThree);
+      document.getElementById("kamp_4").addEventListener("click", startSektionFourFour);
+
+    }
+
+    async function startSektionFourOne() {
+      let wpEnd = `kampagneprodukt/86`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt1();
+    }
+
+    function Visprodukt1() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_1").classList.add("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      klon.querySelector(".modalTxt").innerHTML = kat.beskrivelse_1;
+      klon.querySelector(".modalTxt2").innerHTML = kat.beskrivelse_2;
+      klon.querySelector(".modalTxt3").innerHTML = kat.beskrivelse_3;
+      sectionFour.appendChild(klon);
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("circle1");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal2 = document.getElementById("myModal2");
+
+      // Get the button that opens the modal
+      var btn2 = document.getElementById("circle2");
+
+      // Get the <span> element that closes the modal
+      var span2 = document.getElementsByClassName("close2")[0];
+
+      // When the user clicks the button, open the modal
+      btn2.onclick = function() {
+        modal2.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span2.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal3 = document.getElementById("myModal3");
+
+      // Get the button that opens the modal
+      var btn3 = document.getElementById("circle3");
+
+      // Get the <span> element that closes the modal
+      var span3 = document.getElementsByClassName("close3")[0];
+
+      // When the user clicks the button, open the modal
+      btn3.onclick = function() {
+        modal3.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span3.onclick = function() {
+        modal3.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      }
+    }
+
+    async function startSektionFourTwo() {
+      let wpEnd = `kampagneprodukt/85`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt2();
+    }
+
+    function Visprodukt2() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_2").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      klon.querySelector(".modalTxt").innerHTML = kat.beskrivelse_1;
+      klon.querySelector(".modalTxt2").innerHTML = kat.beskrivelse_2;
+      klon.querySelector(".modalTxt3").innerHTML = kat.beskrivelse_3;
+      sectionFour.appendChild(klon);
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("circle1");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal2 = document.getElementById("myModal2");
+
+      // Get the button that opens the modal
+      var btn2 = document.getElementById("circle2");
+
+      // Get the <span> element that closes the modal
+      var span2 = document.getElementsByClassName("close2")[0];
+
+      // When the user clicks the button, open the modal
+      btn2.onclick = function() {
+        modal2.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span2.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal3 = document.getElementById("myModal3");
+
+      // Get the button that opens the modal
+      var btn3 = document.getElementById("circle3");
+
+      // Get the <span> element that closes the modal
+      var span3 = document.getElementsByClassName("close3")[0];
+
+      // When the user clicks the button, open the modal
+      btn3.onclick = function() {
+        modal3.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span3.onclick = function() {
+        modal3.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      }
+    }
+
+    async function startSektionFourThree() {
+      let wpEnd = `kampagneprodukt/21`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt3();
+    }
+
+    function Visprodukt3() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_3").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_4").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      klon.querySelector(".modalTxt").innerHTML = kat.beskrivelse_1;
+      klon.querySelector(".modalTxt2").innerHTML = kat.beskrivelse_2;
+      klon.querySelector(".modalTxt3").innerHTML = kat.beskrivelse_3;
+      sectionFour.appendChild(klon);
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("circle1");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal2 = document.getElementById("myModal2");
+
+      // Get the button that opens the modal
+      var btn2 = document.getElementById("circle2");
+
+      // Get the <span> element that closes the modal
+      var span2 = document.getElementsByClassName("close2")[0];
+
+      // When the user clicks the button, open the modal
+      btn2.onclick = function() {
+        modal2.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span2.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal3 = document.getElementById("myModal3");
+
+      // Get the button that opens the modal
+      var btn3 = document.getElementById("circle3");
+
+      // Get the <span> element that closes the modal
+      var span3 = document.getElementsByClassName("close3")[0];
+
+      // When the user clicks the button, open the modal
+      btn3.onclick = function() {
+        modal3.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span3.onclick = function() {
+        modal3.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      }
+    }
+
+    async function startSektionFourFour() {
+      let wpEnd = `kampagneprodukt/13`;
+      const respons = await fetch(wp + wpEnd);
+      kat = await respons.json();
+      Visprodukt4();
+    }
+
+    function Visprodukt4() {
+      sectionFour.innerHTML = "";
+      document.getElementById("kamp_4").classList.add("active");
+      document.getElementById("kamp_1").classList.remove("active");
+      document.getElementById("kamp_2").classList.remove("active");
+      document.getElementById("kamp_3").classList.remove("active");
+      const klon = skabelonFour.cloneNode(true);
+      klon.querySelector(".billede").src = kat.billede.guid;
+      klon.querySelector(".navn").innerHTML = kat.produktnavn;
+      klon.querySelector(".designer").innerHTML = kat.designer;
+      klon.querySelector(".modalTxt").innerHTML = kat.beskrivelse_1;
+      klon.querySelector(".modalTxt2").innerHTML = kat.beskrivelse_2;
+      klon.querySelector(".modalTxt3").innerHTML = kat.beskrivelse_3;
+      sectionFour.appendChild(klon);
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("circle1");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal2 = document.getElementById("myModal2");
+
+      // Get the button that opens the modal
+      var btn2 = document.getElementById("circle2");
+
+      // Get the <span> element that closes the modal
+      var span2 = document.getElementsByClassName("close2")[0];
+
+      // When the user clicks the button, open the modal
+      btn2.onclick = function() {
+        modal2.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span2.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      }
+
+      // Get the modal
+      var modal3 = document.getElementById("myModal3");
+
+      // Get the button that opens the modal
+      var btn3 = document.getElementById("circle3");
+
+      // Get the <span> element that closes the modal
+      var span3 = document.getElementsByClassName("close3")[0];
+
+      // When the user clicks the button, open the modal
+      btn3.onclick = function() {
+        modal3.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span3.onclick = function() {
+        modal3.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      }
+    }
+
 
     async function startSektionFive() {
       let wpEnd = `indhold/69`;

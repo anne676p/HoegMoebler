@@ -40,7 +40,9 @@ html {
 }
 
 /* The Close Button */
-.close {
+.close,
+.close2,
+.close3 {
   color: #D95F18;
   float: right;
   font-size: 28px;
@@ -48,7 +50,11 @@ html {
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.close2:hover,
+.close2:focus,
+.close3:hover,
+.close3:focus {
   color: #431E1E;
   text-decoration: none;
   cursor: pointer;
