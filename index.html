@@ -286,8 +286,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="gsap.min.js"></script>
-  <script src="ScrollTrigger.min.js"></script>
+
 
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -296,10 +295,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-
-
     $(document).ready(function() {
       $(document).on('mousemove', function(e) {
         $('#circularcursor').css({
@@ -309,7 +304,6 @@
       })
     });
 
-    document.addEventListener("DOMContentLoaded", begin);
     document.addEventListener("DOMContentLoaded", startAssets);
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
@@ -355,52 +349,6 @@
 
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
-
-    function begin() {
-      const root = document.documentElement;
-
-      const sections = [...document.querySelectorAll("template")];
-
-      let options = {
-        rootMargin: "0px 0px",
-        threshold: .5
-      };
-
-      const callback = (entries, observer) => {
-        entries.forEach(entry => {
-          const {
-            target
-          } = entry;
-
-          if (entry.intersectionRatio >= 0.5) {
-            root.style.setProperty('--hue', target.dataset.hue);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(callback, options);
-
-      sections.forEach((template, index) => {
-        observer.observe(template)
-      })
-
-      sections.forEach((template) => {
-        const divs = template.querySelectorAll("div");
-
-        gsap.from(divs, {
-          opacity: 0,
-          y: 100,
-          duration: 1,
-          stagger: 1,
-          scrollTrigger: {
-            trigger: template,
-            start: "top center",
-            end: "center center",
-            scrub: true,
-          },
-        });
-      });
-    }
 
     async function startAssets() {
 
