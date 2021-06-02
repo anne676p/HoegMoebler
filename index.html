@@ -10,12 +10,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link href="rwd.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="icon" href="icon/favicon-32x32.png">
 
   <title>HAVEaSEAT</title>
 
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -53,9 +56,9 @@
     </div>
     <div style="border-style: solid;">
       <div class="text-center pt-5">
-        <h2 class="pt-5">Mød Simon og Camilla </h2>
-        <p>Et ungt par med passion for dansk design</p>
-        <p style="text-decoration: overline; ">Prøv at holde musen henover billederne</p>
+        <h2 class="pt-5 titel"></h2>
+        <p class="beskrivelse"></p>
+        <p style="text-decoration: underline; ">Prøv at holde musen henover billederne</p>
       </div>
       <div class=" grid-container row_collage">
         <div class="column_collage">
@@ -132,7 +135,7 @@
         </div>
       </div>
       <div class="text-center p-5">
-        <p>Find mere inspiration under hashtagget “HAVEaSEAT”, og del din egen indretning med resten af fællesskabet</p>
+        <h3 class="more"></h3>
       </div>
     </div>
   </template>
@@ -141,10 +144,12 @@
   <template id="template_2_2">
     <img class="fifth_element">
   </template>
-
-  <section class="container_row p-5" id="section_3"></section>
+  <div class="pt-5">
+    <h2 class="text-center p-5" style="color: #431E1E;"> få 30% på de udvalgte stole</h2>
+  </div>
+  <section class="container_row px-5" id="section_3"></section>
   <template id="template_three">
-    <div class="pt-5 pb-5">
+    <div class="pb-5">
       <a href="https://hogh-mobler.myshopify.com/collections/haveaseat">
         <div id="product_1">
           <img class="billede">
@@ -156,23 +161,56 @@
     </div>
   </template>
 
+  <section id="section_8" class="container p-lg-5"> </section>
+  <template id="template_eight">
+    <div class="container d-flex justify-content-lg-center p-5">
+      <div class="col-lg-7">
+        <h2 style="color: #431E1E;" class="konkurrence_titel pb-lg-2"></h2>
+        <p class="konkurrence_krav"></p>
+      </div>
+    </div>
+  </template>
+  <div class="container px-lg-5 pb-5">
+    <div id="curator-feed-new-feed-layout" style="cursor: pointer;"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+  </div>
+
+
+  <section id="section_5" class="section_5_splash container-fluid color mt-5 d-flex align-items-center justify-content-end"></section>
+  <template id="template_five">
+    <div class="col-md-6">
+      <div>
+        <blockquote class="citat col-lg-8"></blockquote>
+        <cite class="navn ps-5"></cite>
+      </div>
+    </div>
+  </template>
+
+  <section id="section_6" class="p-4 container-fluid color"></section>
+  <template id="template_six">
+    <div class="p-lg-5 container">
+      <h1 class="overskrift pb-4"></h1>
+      <p class="indhold column-count"></p>
+    </div>
+  </template>
+
   <section id="section_4" class="container p-5"></section>
 
   <div class="d-flex align-items-lg-end flex-column sekfour">
     <div class="d-flex align-items-lg-end flex-column" id="bntcolumn">
-      <p class="align-self-center" style="text-decoration: overline"> Vælg en stol</p>
+      <p class="align-self-center" style="text-decoration: underline"> Vælg en stol</p>
       <a class="btn m-2 p-3" id="kamp_1"> CH24 // Y-STOL </a>
       <a class="btn m-2 p-3" id="kamp_2"> CH20 // ELBOW CHAIR </a>
       <a class="btn m-2 p-3" id="kamp_3"> CH07 // SKALSTOLEN </a>
       <a class="btn m-2 p-3" id="kamp_4"> CH25 // LOUNGESTOL </a>
     </div>
     <template id="template_four">
-      <div class="d-lg-flex">
+      <h2 class="text-center p-5" style="color: #431E1E;"> Gå på opdagelser i stolenes univers</h2>
+      <div class="d-lg-flex py-5">
         <div class="d-flex">
           <div>
             <h2 class="navn" style="margin-right: 10px;"></h2>
             <p class="designer"></p>
-            <p style="text-decoration: overline"> Tryk på cirklerne og find informationer om stolen</p>
+            <p style="text-decoration: underline"> Tryk på cirklerne og find informationer om stolen</p>
           </div>
           <div style="height: 100%;">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-circle circle" viewBox="0 0 16 16">
@@ -220,52 +258,6 @@
     </template>
   </div>
 
-  <section id="section_5" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
-  <template id="template_five">
-    <div class="col-md-6">
-      <div>
-        <blockquote class="citat col-lg-8"></blockquote>
-        <cite class="navn ps-5"></cite>
-      </div>
-    </div>
-  </template>
-
-  <section id="section_6" class="p-4 container-fluid color"></section>
-  <template id="template_six">
-    <div class="p-lg-5 container">
-      <h1 class="overskrift pb-4"></h1>
-      <p class="indhold column-count"></p>
-    </div>
-  </template>
-
-  <section id="section_7"> </section>
-  <template id="template_seven">
-    <img class="fifth_element">
-  </template>
-
-  <section id="section_8" class="container"> </section>
-  <template id="template_eight">
-    <div class="container">
-      <div class="top">
-        <h2 style="color: #431E1E;" class="konkurrence_titel"></h2>
-        <p class="pt-4 pb-4"> Vær med i konkurrencen om en valgfri Y-stol fra Carl Hansen & Søn, designet af Hans J. Wegner. <br> Alt du skal gøre, er følgende:</p>
-        <ul class="d-flex flex-wrap">
-          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_1"></li>
-          <li class="col-6 pe-3 col-lg-3 text-lg-center punkt_2"></li>
-          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_3"></li>
-          <li class="col-6 pe-3 col-lg-2 text-lg-center punkt_4"></li>
-        </ul>
-      </div>
-      <p class="pt-5">Få ét ekstra lod i puljen ved at dele din indretning med os på Instagram med hashtagget ‘HAVEaSEAT’,<br> og fortæl os hvad Hans Wegners design, betyder for dig. <br><br>
-
-        Du kan finde lidt inspiration fra andre herunder.
-      </p>
-    </div>
-  </template>
-  <div class="container p-lg-5">
-    <div id="curator-feed-new-feed-layout" style="cursor: pointer;"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
-  </div>
-
   <section id="section_9" class="section_5_splash container-fluid color mt-4 d-flex align-items-center justify-content-end"></section>
   <template id="template_nine">
     <div class="col-lg-6">
@@ -287,15 +279,16 @@
     <img class="fifth_element">
   </template>
 
+
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
@@ -303,6 +296,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
   <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
     $(document).ready(function() {
       $(document).on('mousemove', function(e) {
         $('#circularcursor').css({
@@ -312,46 +309,7 @@
       })
     });
 
-    const root = document.documentElement;
-
-    const sections = [...document.querySelectorAll("section")];
-
-    let options = {
-      rootMargin: "0px 0px",
-      threshold: .5
-    };
-
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        const {
-          target
-        } = entry;
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    sections.forEach((section, index) => {
-      observer.observe(section)
-    })
-
-    sections.forEach((section) => {
-      const divs = section.querySelectorAll("div:not([role='tablist'])");
-
-      gsap.from(divs, {
-        opacity: 0,
-        y: 100,
-        duration: 1,
-        stagger: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top center",
-          end: "center center",
-          scrub: true,
-        },
-      });
-    });
-
+    document.addEventListener("DOMContentLoaded", begin);
     document.addEventListener("DOMContentLoaded", startAssets);
     document.addEventListener("DOMContentLoaded", startSektionTwo);
     document.addEventListener("DOMContentLoaded", startSektionThree);
@@ -382,9 +340,6 @@
     const sectionSix = document.querySelector("#section_6");
     const skabelonSix = document.querySelector("#template_six").content;
 
-    const sectionSeven = document.querySelector("#section_7");
-    const skabelonSeven = document.querySelector("#template_seven").content;
-
     const sectionEight = document.querySelector("#section_8");
     const skabelonEight = document.querySelector("#template_eight").content;
 
@@ -401,7 +356,54 @@
     const wp = "http://akjessien.dk/Hoegmoebler/wordpress/wp-json/wp/v2/";
 
 
+    function begin() {
+      const root = document.documentElement;
+
+      const sections = [...document.querySelectorAll("template")];
+
+      let options = {
+        rootMargin: "0px 0px",
+        threshold: .5
+      };
+
+      const callback = (entries, observer) => {
+        entries.forEach(entry => {
+          const {
+            target
+          } = entry;
+
+          if (entry.intersectionRatio >= 0.5) {
+            root.style.setProperty('--hue', target.dataset.hue);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      sections.forEach((template, index) => {
+        observer.observe(template)
+      })
+
+      sections.forEach((template) => {
+        const divs = template.querySelectorAll("div");
+
+        gsap.from(divs, {
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          stagger: 1,
+          scrollTrigger: {
+            trigger: template,
+            start: "top center",
+            end: "center center",
+            scrub: true,
+          },
+        });
+      });
+    }
+
     async function startAssets() {
+
       let wpEnd = `indhold/66`;
       const respons = await fetch(wp + wpEnd);
       indhold = await respons.json();
@@ -414,16 +416,9 @@
       klon.querySelector(".campaign_name").innerHTML = indhold.titel;
       sectionOne.appendChild(klon);
 
-      const element = skabelonSeven.cloneNode(true);
-      element.querySelector(".fifth_element").src = indhold.vandmaerke.guid;
-      sectionSeven.appendChild(element);
-
       const konkurrence = skabelonEight.cloneNode(true);
       konkurrence.querySelector(".konkurrence_titel").innerHTML = indhold.konkurrence_titel;
-      konkurrence.querySelector(".punkt_1").innerHTML = indhold.konkurrencekrav_1;
-      konkurrence.querySelector(".punkt_2").innerHTML = indhold.konkurrencekrav_2;
-      konkurrence.querySelector(".punkt_3").innerHTML = indhold.konkurrencekrav_3;
-      konkurrence.querySelector(".punkt_4").innerHTML = indhold.konkurrencekrav_4;
+      konkurrence.querySelector(".konkurrence_krav").innerHTML = indhold.konkurrencekrav;
 
       sectionEight.appendChild(konkurrence);
 
@@ -448,6 +443,9 @@
     function visTwo() {
       const klon = skabelonTwo.cloneNode(true);
       klon.querySelector(".overskrift").innerHTML = indhold.titel;
+      klon.querySelector(".titel").innerHTML = indhold.par;
+      klon.querySelector(".beskrivelse").innerHTML = indhold.par_beskrivelse;
+      klon.querySelector(".more").innerHTML = indhold.more;
       klon.querySelector(".indhold").innerHTML = indhold.content.rendered;
       klon.querySelector(".pic1").src = indhold.collagepic_1.guid;
       klon.querySelector(".pic2").src = indhold.collagepic_2.guid;

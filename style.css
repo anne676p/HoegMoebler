@@ -1,9 +1,33 @@
 body,
 html {
-  font-family: 'Raleway', sans-serif;
   background-color: #F5F5F5;
   height: 100%;
   scroll-behavior: smooth;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.campaign_name h3 {
+  font-family: 'Raleway', sans-serif !important;
 }
 
 .fa {
@@ -182,15 +206,6 @@ video {
   opacity: 50%;
 }
 
-.arrow {
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  background-image: url(svg/arrow.svg);
-  background-size: contain;
-  position: absolute;
-}
-
 .item {
   height: 100px;
 }
@@ -238,20 +253,6 @@ video {
   color: #F5F5F5;
 }
 
-h1 {
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 2em;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-h3 {
-  font-weight: bold;
-}
 
 img {
   width: 100%;
@@ -377,7 +378,7 @@ img {
     transform-origin: 0 0;
     transform: rotate(90deg);
     top: 50%;
-    right: -12%;
+    right: -9%;
 
   }
 
@@ -433,6 +434,15 @@ img {
     font-size: 1.3em;
   }
 
+  .arrow {
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url(svg/arrow.svg);
+    background-size: contain;
+    position: absolute;
+  }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -441,7 +451,7 @@ img {
   }
 
   .rotate {
-    right: -8%;
+    right: -5%;
 
   }
 
