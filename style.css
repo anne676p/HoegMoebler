@@ -5,6 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 
+#mc_embed_signup {
+  background: #F5F5F5;
+  clear: left;
+  color: #431E1E;
+}
+
 p {
   font-family: 'Raleway', sans-serif;
 
@@ -36,6 +42,7 @@ h2 {
   text-align: center;
   text-decoration: none;
   margin: 2px 4px;
+  z-index: 1;
 }
 
 .fa:hover {
@@ -63,14 +70,6 @@ blockquote:before {
   color: white;
   position: fixed;
   top: 15%;
-  right: 0;
-}
-
-.fa-pinterest {
-  background: #431E1E;
-  color: white;
-  position: fixed;
-  top: 21%;
   right: 0;
 }
 
@@ -200,6 +199,17 @@ video {
   width: 65%;
 }
 
+#mc-embedded-subscribe {
+  border: solid 1px !important;
+  border-radius: 0 !important;
+  background-color: #431E1E !important;
+  color: white !important;
+}
+
+#mc-embedded-subscribe:hover {
+  width: 10% !important;
+}
+
 #product_1 .billede:hover,
 #product_1 .overskrift:hover,
 #product_1 .pris:hover {
@@ -319,20 +329,6 @@ img {
 }
 
 
-.citatfirst {
-  font-size: 30rem;
-  position: relative;
-  font-style: italic;
-  top: 23vw;
-  left: -15vw;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
-
-/* SEKTION 1 */
-
-
 .logo {
   background-image: url(logo_hoegmoebler.svg);
   position: absolute;
@@ -360,7 +356,6 @@ img {
 }
 
 .felement {
-  background-image: url(img/5thelement-01.png);
   background-repeat: no-repeat;
   height: 15vw;
   background-size: cover;
@@ -378,7 +373,7 @@ img {
     transform-origin: 0 0;
     transform: rotate(90deg);
     top: 50%;
-    right: -9%;
+    left: 99%;
 
   }
 
@@ -392,13 +387,6 @@ img {
     width: 45px;
   }
 
-  .citatfirst {
-    top: 8vw;
-    left: -5vw;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-  }
 
   .column-count {
     column-count: 2;
@@ -450,18 +438,8 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 
-  .rotate {
-    right: -5%;
-
-  }
-
-  .citatfirst {
-    top: 6vw;
-  }
-
 }
 
-/* SEKTION 2 */
 .section_5_splash {
   background-image: linear-gradient(0deg, rgba(67, 30, 30, 1) 0%, rgba(67, 30, 30, 0.41360294117647056) 93%), url(http://akjessien.dk/Hoegmoebler/wordpress/wp-content/uploads/2021/05/larshoeg.png);
   background-repeat: no-repeat;
@@ -478,10 +456,3 @@ img {
   background-size: cover;
   background-position: center;
 }
-
-/* SEKTION 3 */
-/* SEKTION 4 */
-/* SEKTION 5 */
-/* SEKTION 6 */
-/* SEKTION 7 */
-/* SEKTION 8 */
